@@ -66,3 +66,26 @@ The other interesting aspect is that an RBM becomes better (meaning more robust)
 by adding a probabilistic element to its learning. A similar thing happens in
 the human brain where the signals from one Neuron to the next can have a
 random delay.
+
+
+Further exploration
+-------------------
+
+You can try your own input data samples. I ran an experiment with variations
+of these two patterns:
+
+```ruby
+training_data = [
+  [1,0,1,0,1,0],
+  [0,1,0,1,0,1]
+]
+```
+
+This one is cool for daydreaming. Run a few daydream cycles and look at the samples
+you'll see variations of the two patterns above. The nature of the variations
+depends on how much variation there is in your training data.
+
+
+I think it would be cool to work with a more graphic representation of the test
+data. I started thinking about this and added some graphic test data to the
+`training_data.rb` file, however I haven't gotten to using it yet.
