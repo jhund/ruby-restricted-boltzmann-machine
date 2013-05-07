@@ -23,6 +23,7 @@ Run it like so in a Ruby irb console in the root directory of the repo:
 require "#{ Dir.pwd }/restricted_boltzmann_machine.rb"
 require 'pp'
 
+# Initialize and train the RBM
 rbm = RestrictedBoltzmannMachine.new(6, 2)
 training_data = [
   [1,1,1,0,0,0],
@@ -33,10 +34,18 @@ training_data = [
   [0,0,1,1,1,0]
 ]
 rbm.train(training_data, 10000)
+# Inspect the weights
+# NOTE: The weights here will be different from the ones in Ed's example.
+# They could be transposed, however they should converge on the same clusters
+# as Ed's.
 pp rbm.weights
 
+# Now provide a new input and see what we get
 user_input = [[0,0,0,1,1,0]]
 pp rbm.run_visible(user_input)
+
+# And now let it dream for a bit. It starts with a random input and then
+# converges on patterns it's familiar with through training.
 pp rbm.daydream(10)
 ```
 
