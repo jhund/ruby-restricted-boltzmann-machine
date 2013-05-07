@@ -34,13 +34,16 @@ training_data = [
   [0,0,1,1,1,0]
 ]
 rbm.train(training_data, 10000)
-# Inspect the weights
+
+# Inspect the trained weights
 # NOTE: The weights here will be different from the ones in Ed's example.
 # They could be transposed, however they should converge on the same clusters
 # as Ed's.
 pp rbm.weights
 
-# Now provide a new input and see what we get
+# Now provide a new input and see what we get on the output.
+# You can try a few different inputs that somewhat resemble the movie category
+# clusters from Ed's example and you should get consistent output.
 user_input = [[0,0,0,1,1,0]]
 pp rbm.run_visible(user_input)
 
